@@ -4,7 +4,8 @@ body {
 }
 #res {
  direction: rtl;
- text-overflow: hidden;
+ text-overflow: clip;
+ overflow: hidden;
  white-space: nowrap;
     background-color: lightgray;
     border: solid black 2px;
