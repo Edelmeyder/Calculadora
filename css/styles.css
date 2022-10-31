@@ -3,10 +3,6 @@ body {
 	background-color: aliceblue;
 }
 #res {
- direction: rtl;
- text-overflow: clip;
- overflow: hidden;
- white-space: nowrap;
     background-color: lightgray;
     border: solid black 2px;
     height: 30px;
