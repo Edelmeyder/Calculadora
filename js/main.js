@@ -180,6 +180,7 @@ function formatResult() {
 	}
 	return new Intl.NumberFormat("en-US", {
 		style: "decimal",
+		useGrouping: false,
 		minimumFractionDigits: precision,
 		maximumFractionDigits: precision,
 	}).format(result);
