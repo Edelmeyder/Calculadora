@@ -54,6 +54,11 @@ function numFunc(num) {
 
 function operatorFunc(operator) {
 	return () => {
+		if (result !== undefined) {
+			operator1 = formatResult();
+			op1Precision = precision;
+			result = undefined;
+		}
 		// this if handles when an operation is made with more than 2 operands
 		if (operation !== "") {
 			equals();
@@ -151,10 +156,19 @@ function del() {
 }
 
 function updateDiplay() {
+	let displaystring = operator1 + operation + operator2;
 	if (result !== undefined) {
-		display.innerHTML = formatResult();
+		if (!display.innerHTML.includes("=")) {
+			if (displaystring.length > 13) {
+				displaystring = displaystring.slice(0, 13);
+			}
+			display.innerHTML = displaystring + "<br/>= " + formatResult();
+		}
 	} else {
-		display.innerHTML = operator1 + operation + operator2;
+		if (displaystring.length > 13) {
+			displaystring = displaystring.slice(-13);
+		}
+		display.innerHTML = displaystring;
 	}
 }
 
